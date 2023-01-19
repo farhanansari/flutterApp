@@ -17,7 +17,10 @@ class _ProfileImageState extends State<ProfileImage> {
 
   void takePhoto(ImageSource source) async {
     final pickedFile = (await _picker.pickImage(source: source));
-    cropImage(pickedFile!);
+    if (mounted && pickedFile != null) {
+      cropImage(pickedFile);
+    }
+
 /*     setState(() {
       _imageFile = pickedFile as XFile;
     }); */

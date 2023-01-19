@@ -6,21 +6,24 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const SizedBox(height: 10),
-        const ProfileImage(),
-        const SizedBox(height: 10),
-        TextFormField(
-          onChanged: (value) {},
-          decoration: const InputDecoration(labelText: 'Bio'),
-        ),
-        const SizedBox(height: 10),
-        TextFormField(
-          onChanged: (value) {},
-          decoration: const InputDecoration(labelText: 'Phone'),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: <Widget>[
+          const SizedBox(height: 10),
+          const ProfileImage(),
+          const SizedBox(height: 10),
+          TextFormField(
+            onChanged: (value) {},
+            decoration: const InputDecoration(labelText: 'Bio'),
+          ),
+          const SizedBox(height: 10),
+          TextFormField(
+            onChanged: (value) {},
+            decoration: const InputDecoration(labelText: 'Phone'),
+          ),
+        ],
+      ),
     );
   }
 }

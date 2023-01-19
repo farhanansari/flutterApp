@@ -12,8 +12,11 @@ class Profile extends StatelessWidget {
           title: const Text("Setup Profile"),
           centerTitle: true,
         ),
-        body: Column(
-          children: <Widget>[AboutMe()],
+        body: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Column(
+            children: <Widget>[AboutMe()],
+          ),
         ));
   }
 }

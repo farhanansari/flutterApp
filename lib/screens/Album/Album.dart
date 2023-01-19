@@ -22,28 +22,19 @@ class _AlbumState extends State<Album> {
   CroppedFile? _imageFile;
   final List _allImages = [];
   final ImagePicker _picker = ImagePicker();
-  final List<String> _items = [
-/*     "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/beach-84533_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/brooklyn-bridge-1791001_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/cinque-terre-279013_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/coast-3358820_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/empire-state-building-1081929_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/maldives-1993704_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/new-york-city-336475_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/plouzane-1758197_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/sea-2470908_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/sunset-675847_640.jpg",
-    "https://kaleidosblog.s3-eu-west-1.amazonaws.com/flutter_gallery/surfing-2212948_640.jpg" */
-  ];
+  final List<String> _items = [];
 
   void takePhoto(ImageSource source) async {
     final pickedFile = (await _picker.pickImage(source: source));
     //_allImages.add(Image.asset("assets/profile.png"));
 
     if (pickedFile!.path != null) {
-      setState(() {
-        _items.add(pickedFile.path);
-      });
+      //setStateIfMounted()
+      if (mounted) {
+        setState(() {
+          _items.add(pickedFile.path);
+        });
+      }
 /*       setState(() {
         //_allImages.add(Image.asset("assets/profile.png"));
         //_allImages.add(Image.file(File(pickedFile.path)));
@@ -101,11 +92,14 @@ class _AlbumState extends State<Album> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(title: const Text("Album")),
         floatingActionButton: FloatingActionButton(
           foregroundColor: Colors.black,
           onPressed: () {
-            showBottomSheet(
-                context: context, builder: ((builder) => bottomSheet()));
+            showModalBottomSheet(
+                isDismissible: true,
+                context: context,
+                builder: ((builder) => bottomSheet()));
           },
           child: const Icon(Icons.add),
         ),

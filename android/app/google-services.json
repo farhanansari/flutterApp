@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "899946152877",
+    "project_id": "thecuts-33443",
+    "storage_bucket": "thecuts-33443.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899946152877:android:057672e8c1205ca46b1724",
+        "android_client_info": {
+          "package_name": "com.example.flutter_widgetbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899946152877-prf12g7o950htunl8fen2ukdnjmlmn80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLKlaLxKxTQO-0B2Dof1WKbFzQPk2N5BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899946152877-prf12g7o950htunl8fen2ukdnjmlmn80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
